@@ -1,5 +1,5 @@
 require "sass_inline_svg/version"
-require "sass"
+require "sassc"
 require "cgi"
 
 module Sass::Script::Functions
@@ -8,7 +8,7 @@ module Sass::Script::Functions
   def svg_inline(path, repl = nil)
     inline_svg(path, repl)
   end
-  
+
   def inline_svg(path, repl = nil)
     assert_type path, :String
     path = path.value.strip()
@@ -36,8 +36,7 @@ module Sass::Script::Functions
 
     encoded = CGI::escape(svg).gsub("+", "%20")
     encoded_url = "url('data:image/svg+xml;charset=utf-8," + encoded + "')"
-    Sass::Script::String.new(encoded_url)
-    
+    SassC::Script::Value::String.new(encoded_url)
   end
 
 
@@ -49,7 +48,7 @@ module Sass::Script::Functions
         f.read
       end
     else
-      raise Sass::SyntaxError, "File not found or cannot be read (native): #{path}"
+      raise SassC::SyntaxError, "File not found or cannot be read (native): #{path}"
     end
   end
 
