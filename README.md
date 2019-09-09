@@ -1,25 +1,25 @@
 # Sass-Inline-Svg
 
-[![Gem Version](https://badge.fury.io/rb/sass_inline_svg.svg)](http://badge.fury.io/rb/sass_inline_svg)
+This is, at its core, a clone of [franzheidl/sass-inline-svg](https://github.com/franzheidl/sass-inline-svg).
 
-Inline url-encoded SVG with Sass. Optional variable string replacement included!
+Inline url-encoded SVG with SassC. Optional variable string replacement included!
 
-This is a Ruby Gem to be used with Ruby Sass, a version of this for node/npm-based environments with node-sass lives here: [sass-inline-svg-utf8](https://github.com/franzheidl/sass-inline-svg-utf8)
+This is a Ruby Gem to be used with Ruby SassC (libsass)
 
 
 ## Installation
 
-    gem install sass_inline_svg
+    gem install sassc_inline_svg
 
 Add this line to your application's Gemfile:
 
-    gem 'sass_inline_svg'
+    gem 'sassc_inline_svg'
 
 
 
 ## Usage
 
-Sass-inline-svg adds a `inline_svg` function you can use with Sass. It url-encodes the contents of the specified file and inlines it in your CSS (Url-encoded SVG is about 30% smaller than base64).
+SassC-inline-svg adds a `inline_svg` function you can use with SassC. It url-encodes the contents of the specified file and inlines it in your CSS (Url-encoded SVG is about 30% smaller than base64).
 
 ###Basic
 
@@ -34,7 +34,7 @@ When working with plain Sass, you'll have to use the full path to the svg file, 
 
 Replacing variable strings in SVG when inlining them with Sass makes sense e.g. if you need multiple variants of the same graphic with different fill colors.
 
-With Sass-Inline-Svg you only need __one__ source svg file with a variable string for `fill`:
+With SassC-Inline-Svg you only need __one__ source svg file with a variable string for `fill`:
 
     …
     <polygon fill="fillcolor" points="[…] "/>
@@ -57,7 +57,7 @@ __Note:__ If you use `$`- or `@`-prefixed variable names in your SVG or if you w
     .my-thing {
         background-image: inline_svg('my-file.svg', ( '$fillcolor': '#fff' ));
     }
-    
+
 or
 
     .my-thing {
