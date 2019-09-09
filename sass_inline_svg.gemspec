@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Wouter van der Meulen"]
   spec.email         = ["info@clikex.dev"]
   spec.summary       = %q{Inline url-encoded SVG with SassC}
-  spec.description   = %q{Inline url-encoded SVG with SassC. Optional variable string replacement included!}
-  spec.homepage      = "https://github.com/franzheidl/sass-inline-svg"
+  spec.description   = %q{Inline url-encoded SVG with SassC. Optional variable string replacement included! Based on franzheidl/sass-inline-svg.}
+  spec.homepage      = "https://github.com/ClikeX/sassc-inline-svg"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
