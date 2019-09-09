@@ -21,7 +21,7 @@ Add this line to your application's Gemfile:
 
 SassC-inline-svg adds a `inline_svg` function you can use with SassC. It url-encodes the contents of the specified file and inlines it in your CSS (Url-encoded SVG is about 30% smaller than base64).
 
-###Basic
+### Basic
 
     .my-thing {
         background-image: inline_svg('my-file.svg');
