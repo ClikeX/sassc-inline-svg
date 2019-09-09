@@ -1,8 +1,8 @@
-require "sass_inline_svg/version"
+require "sassc_inline_svg/version"
 require "sassc"
 require "cgi"
 
-module Sass::Script::Functions
+module SassC::Script::Functions
 
   # Alias function to comply with old documentation
   def svg_inline(path, repl = nil)
@@ -13,7 +13,7 @@ module Sass::Script::Functions
     assert_type path, :String
     path = path.value.strip()
 
-    # Use Soprockets / Rails asset pipeline if in Rails context (and handle File not found):
+    # Use Sprockets / Rails asset pipeline if in Rails context (and handle File not found):
     if defined?(Rails)
       asset = (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset(path).to_s
       raise "File not found or cannot be read (Sprockets): #{path}" if asset.nil?
@@ -51,5 +51,4 @@ module Sass::Script::Functions
       raise SassC::SyntaxError, "File not found or cannot be read (native): #{path}"
     end
   end
-
 end

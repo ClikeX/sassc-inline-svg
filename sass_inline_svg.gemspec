@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sass_inline_svg/version'
+require 'sassc_inline_svg/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "sass_inline_svg"
-  spec.version       = SassInlineSvg::VERSION
-  spec.authors       = ["Franz Heidl"]
-  spec.email         = ["franz@franzheidl.de"]
-  spec.summary       = %q{Inline url-encoded SVG with Sass}
-  spec.description   = %q{Inline url-encoded SVG with Sass. Optional variable string replacement included!}
+  spec.name          = "sassc_inline_svg"
+  spec.version       = SassCInlineSvg::VERSION
+  spec.authors       = ["Wouter van der Meulen"]
+  spec.email         = ["info@clikex.dev"]
+  spec.summary       = %q{Inline url-encoded SVG with SassC}
+  spec.description   = %q{Inline url-encoded SVG with SassC. Optional variable string replacement included!}
   spec.homepage      = "https://github.com/franzheidl/sass-inline-svg"
   spec.license       = "MIT"
 
